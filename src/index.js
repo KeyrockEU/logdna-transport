@@ -8,7 +8,7 @@ const omit = require("./omit");
  * This transport will send every log to LogDNA. It replaces the `logdna-winston` package, which
  * is not compatible with `winston >= 3`.
  */
-export default class LogDnaTransport extends Transport {
+module.exports = class LogDnaTransport extends Transport {
   constructor(opts = {}) {
     super(opts);
     this.name = opts.name || "LogDNA";
@@ -27,4 +27,4 @@ export default class LogDnaTransport extends Transport {
 
     callback();
   }
-}
+};
